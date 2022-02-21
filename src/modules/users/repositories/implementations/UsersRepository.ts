@@ -25,14 +25,8 @@ export class UsersRepository implements IUsersRepository {
       .orderBy('games.id')
       .getOne();
 
-      //const {title} = games;
-      //console.log(games)
-
-      //console.log(user);
-
       if(user){
-        const a: User = user;
-        return a;
+        return user;
       } else {
         throw new Error('User not found!');
       }
