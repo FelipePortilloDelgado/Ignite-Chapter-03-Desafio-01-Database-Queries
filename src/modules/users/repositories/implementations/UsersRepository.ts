@@ -18,8 +18,8 @@ export class UsersRepository implements IUsersRepository {
     //const { first_name, games } = await this.repository
     const user = await this.repository
       .createQueryBuilder('users')
-      .select(['users', 'games'])
-      //.select(['users.first_name', 'users.last_name', 'users.email', 'games.title'])
+      //.select(['users', 'games'])
+      .select(['users.first_name', 'users.last_name', 'users.email', 'games.title'])
       .innerJoin('users.games', 'games')
       .where(`users.id = '${user_id}'`)
       .orderBy('games.id')
